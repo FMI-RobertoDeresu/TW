@@ -1,0 +1,195 @@
+﻿header {
+    position: relative;
+    clear: both;
+    width: 1200px;
+    height: 100px;
+    border-bottom: 5px solid gray;
+    margin: 0 auto;
+}
+
+    header div#logo {
+        float: left;
+        height: 100px;
+        width: 110px;
+        border-top: 10px solid #FF471A;
+        border-bottom: 5px solid #FF471A;
+        margin-top: -10px;
+    }
+
+        header div#logo img {
+            display: block;
+            max-width: 100px;
+            height: 90px;
+            margin: auto;
+        }
+
+    header div.menu {
+        float: right;
+    }
+
+@media screen and (min-width: 1251px) {
+    header div.menu > ul.dropdown {
+        display: block;
+        position: relative;
+        width: auto;
+        padding: 0;
+        background: white;
+    }
+
+        header div.menu > ul.dropdown > li.item {
+            position: relative;
+            float: left;
+            height: 100px;
+            border-top: 10px solid black;
+            border-bottom: 5px solid gray;
+            margin-top: -10px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+            header div.menu > ul.dropdown > li.item:hover, header div.menu > ul.dropdown > li.item.active {
+                border-top: 10px solid #FF471A;
+                border-bottom: 5px solid #FF471A;
+                background: white;
+                cursor: pointer;
+            }
+
+            header div.menu > ul.dropdown > li.item > a {
+                display: block;
+                max-height: 95px;
+                padding: 40px 30px 40px 30px;
+                color: black;
+            }
+
+            header div.menu > ul.dropdown > li.item:hover > a, header div.menu > ul.dropdown > li.item.active > a {
+                color: red;
+            }
+
+    header div.menu ul.dropdown li.item.has-dropdown.hidden-dropdown a img.toggle-dropdown {
+        display: none;
+    }
+
+    /*Override*/
+    header div.menu ul.dropdown li.item ul.dropdown {
+        padding: 0;
+        margin-top: 5px;
+    }
+
+    header div.menu ul.dropdown li.item.has-dropdown ul.dropdown li.item {
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    header {
+        width: 100%;
+        height: auto;
+    }
+
+        header div#logo {
+            width: 100%;
+        }
+
+            header div#logo img {
+                float: left;
+                margin-left: 30px;
+            }
+
+        header #logo #menu-icon {
+            float: right;
+            width: 20px;
+            height: 20px;
+            margin: 40px;
+            background: transparent url("../Images/menu-icon.png") no-repeat;
+            background-size: 20px 20px;
+            -moz-transition: transform ease 2s, background-image ease 4s;
+            -o-transition: transform ease 2s, background-image ease 4s;
+            -webkit-transition: transform ease 2s, background-image ease 4s;
+            transition: transform ease 2s, background-image ease 4s;
+        }
+
+            header #logo #menu-icon.active, header #logo #menu-icon:hover {
+                background: url("../Images/menu-icon-hover.jpg") no-repeat;
+                background-size: 20px 20px;
+                -moz-transform: rotate(90deg) scale(1.5, 1.5);
+                -ms-transform: rotate(90deg) scale(1.5, 1.5);
+                -o-transform: rotate(90deg) scale(1.5, 1.5);
+                -webkit-transform: rotate(90deg) scale(1.5, 1.5);
+                transform: rotate(90deg) scale(1.5, 1.5);
+            }
+
+        header div.menu {
+            float: none;
+            clear: both;
+            overflow-y: hidden;
+            max-height: 1000px;
+            -moz-transition: max-height 1.2s ease;
+            -o-transition: max-height 1.2s ease;
+            -webkit-transition: max-height 1.2s ease;
+            transition: max-height 1.2s ease;
+        }
+
+            header div.menu.closed {
+                max-height: 0;
+            }
+
+            header div.menu > ul.dropdown {
+                padding: 0;
+            }
+
+            header div.menu ul.dropdown {
+                display: block;
+                position: relative;
+                width: auto;
+            }
+
+                header div.menu ul.dropdown li.item.active {
+                    border: 0;
+                }
+
+                header div.menu ul.dropdown li.item:hover {
+                    background: #3A3A3A;
+                }
+
+                header div.menu ul.dropdown li.item.active:hover {
+                    background: #FF471A;
+                }
+
+                header div.menu ul.dropdown li.item.has-dropdown ul.dropdown {
+                    max-height: 1000px;
+                    overflow: hidden;
+                    -moz-transition: max-height 2s linear;
+                    -o-transition: max-height 2s linear;
+                    -webkit-transition: max-height 2s linear;
+                    transition: max-height 2s linear;
+                }
+
+                header div.menu ul.dropdown li.item.has-dropdown.hidden-dropdown ul.dropdown {
+                    max-height: 0;
+                }
+
+                header div.menu ul.dropdown li.item.has-dropdown.hidden-dropdown a img.toggle-dropdown {
+                    -moz-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                    -o-transform: rotate(0);
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0);
+                    -moz-transition: transform 2s linear;
+                    -o-transition: transform 2s linear;
+                    -webkit-transition: transform 2s linear;
+                    transition: transform 2s linear;
+                }
+
+                header div.menu ul.dropdown li.item.has-dropdown.visible-dropdown a img.toggle-dropdown {
+                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                    -moz-transition: transform .3s linear;
+                    -o-transition: transform .3s linear;
+                    -webkit-transition: transform .3s linear;
+                    transition: transform .3s linear;
+                }
+}

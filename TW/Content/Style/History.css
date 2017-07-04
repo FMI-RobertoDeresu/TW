@@ -1,0 +1,56 @@
+﻿div.period p.name {
+    font-size: 2.5em;
+}
+
+div.period div.image-container {
+    float: left;
+    width: 200px;
+    height: auto;
+    border-bottom: 3px solid black;
+    margin: 10px;
+}
+
+    div.period div.image-container.left {
+        float: left;
+    }
+
+    div.period div.image-container.right {
+        float: right;
+    }
+
+    div.period div.image-container img {
+        float: none;
+        width: 200px;
+        height: 230px;
+    }
+
+    div.period div.image-container p {
+        margin-bottom: 10px;
+    }
+
+/*Legends*/
+div.legend {
+    margin-top: 50px;
+}
+
+    div.legend p.name {
+        margin: 20px;
+        font-size: 3em;
+        text-align: justify;
+    }
+
+    div.legend img.profile {
+        width: 400px;
+        height: 500px;
+        margin: 0 0 20px 0;
+    }
+
+        div.legend img.profile.left {
+            float: left;
+            margin-right: 20px;
+        }
+
+        div.legend img.profile.right {
+            float: right;
+            margin-left: 20px;
+        }

@@ -1,0 +1,19 @@
+﻿#body {
+    position: relative;
+    clear: both;
+    width: 1200px;
+    padding: 20px 0 20px 0;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1250px) {
+    #body {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 865px) {
+    #body {
+        width: 100%;
+    }
+}

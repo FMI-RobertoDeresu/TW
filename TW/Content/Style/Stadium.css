@@ -1,0 +1,14 @@
+﻿div#stadium {
+    font-size: 1.3em;
+}
+
+    div#stadium p.name {
+        text-align: center;
+        font-size: 3em;
+    }
+
+    div#stadium img {
+        float: left;
+        width: 100%;
+        margin-bottom: 30px;
+    }
