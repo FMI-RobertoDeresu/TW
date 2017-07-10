@@ -1,28 +1,28 @@
 ﻿"use strict";
 
-$(document).ready(function () {
-    var $comments = $("#comment-0");
+$(document).ready(function() {
     var $modal = $("#comment-modal");
     var $form = $("form[name='form-comment']");
     var maxDepth = 3;
 
-    $(document).on('click', "#add-comment, .reply", openModal);
+    $(document).on("click", "#add-comment, .reply", openModal);
 
-    $('#close-modal').click(closeModal);
+    $("#close-modal").click(closeModal);
 
-    $('.modal #submit-form').click(function () { $form.submit(); });
+    $(".modal #submit-form").click(function() {
+        $form.submit();
+    });
 
-    $form.submit(function (e) {
+    $form.submit(function(e) {
         e.preventDefault();
 
         var name = $form.find("#name").val();
         var message = $form.find("#comment").val();
         var parentId = $form.find("#parent-id").val();
 
-
         if (name && message && parentId) {
             var parent = getComment(parentId);
-            var comment = new Comment(parentId, name, message, parent !== null ? parent.depth + 1 : 1);
+            var comment = new Comment(parentId, name, message, parent ? parent.depth + 1 : 1);
 
             addComment(comment);
             addCommentContent(comment.id, parentId, true);
@@ -32,7 +32,7 @@ $(document).ready(function () {
     });
 
     function openModal() {
-        $form.find("#parent-id").val($(this).data('comment-id'));
+        $form.find("#parent-id").val($(this).data("comment-id"));
         $modal.css("display", "block");
     }
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
             return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
         }
 
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+        return s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4();
     }
 
     function Comment(parentId, name, message, depth) {
@@ -64,19 +64,19 @@ $(document).ready(function () {
 
     (function initializeComments() {
         function compare(a, b) {
-            return a.depth < b.depth || (a.depth == b.depth && a.createdAt >= b.createdAt) ? -1 : 1;
+            return a.depth < b.depth || (a.depth === b.depth && a.createdAt >= b.createdAt) ? -1 : 1;
         }
 
         var ids = getIds();
         var comments = [];
 
-        $.each(ids, function () {
+        $.each(ids, function() {
             comments.push(getComment(this));
         });
 
         comments.sort(compare);
 
-        $.each(comments, function () {
+        $.each(comments, function() {
             addCommentContent(this.id, this.parentId, false);
         });
     })();
@@ -127,6 +127,7 @@ $(document).ready(function () {
             ids = [id];
         }
         else {
+            ids = ids ? ids : [];
             ids.push(id);
         }
 
@@ -138,7 +139,7 @@ $(document).ready(function () {
         return JSON.parse(localStorage.getItem("ids"));
     }
 
-    Date.prototype.toString = function () {
+    Date.prototype.toString = function() {
         var yyyy = this.getFullYear().toString();
         var MM = (this.getMonth() + 1).toString();
         var dd = this.getDate().toString();
@@ -155,5 +156,5 @@ $(document).ready(function () {
         ms = ms[3] ? ms : "0" + (ms[2] ? ms : "0" + (ms[1] ? ms : "0" + ms));
 
         return yyyy + "." + MM + "." + dd + " " + hh + ":" + mm + ":" + ss + ":" + ms;
-    }
+    };
 });

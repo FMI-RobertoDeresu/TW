@@ -1,10 +1,11 @@
 ﻿div.section {
     padding-bottom: 30px;
+    border-bottom: 5px solid #000000;
     border-bottom: 5px solid rgba(0, 0, 0, 0.6);
     margin-top: 60px;
 }
 
-    div.section > p.name {
+div.section > p.name {
         padding-left: 30px;
         margin-bottom: 10px;
         font-size: 3em;
@@ -34,18 +35,22 @@ div.position div.team-member {
     }
 
 div.position.goalkeepers div.team-member div.image-container {
+    border-bottom-color: #ffff00;
     border-bottom-color: rgba(255, 255, 0, 0.7);
 }
 
 div.position.defenders div.team-member div.image-container {
+    border-bottom-color: #00ff00;
     border-bottom-color: rgba(0, 255, 0, 0.7);
 }
 
 div.position.midfielders div.team-member div.image-container {
+    border-bottom-color: #0000ff;
     border-bottom-color: rgba(0, 0, 255, 0.7);
 }
 
 div.position.attackers div.team-member div.image-container {
+    border-bottom-color: #ff0000;
     border-bottom-color: rgba(255, 0, 0, 0.7);
 }
 
@@ -62,11 +67,12 @@ div.position div.team-member div.info {
     width: auto;
     padding: 20px;
     color: white;
+    background: #000000;
     background: rgba(0, 0, 0, .9);
     font-size: 1.2em;
 }
 
-    div.position div.team-member div.info p {
+div.position div.team-member div.info p {
         margin: 0;
     }
 
